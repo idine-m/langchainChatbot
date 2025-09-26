@@ -18,8 +18,8 @@ prompt = ChatPromptTemplate.from_template("You are an expert in literature. Answ
 chain = prompt | llm | StrOutputParser()
 
 while True:
-    user_input = input("You: ")
+    user_input = input("User: ")
     if user_input.lower() == "exit":
         break
     response = chain.invoke({"question": user_input})
-    print(f"Bot: {response}")
+    print(f"Assistant: {response}")
